@@ -4,3 +4,14 @@
   --font-sans: var(--font-inter);
   --font-heading: var(--font-plus-jakarta-sans);
 }
+
+@theme {
+  --color-hire-100: #d5e9ff;
+  --color-hire-200: #b3d5ff;
+  --color-hire-300: #85b7ff;
+  --color-hire-400: #568aff;
+  --color-hire-500: #2f5dff;
+  --color-hire-600: #0c2bff;
+  --color-hire-700: #001eff;
+  --color-hire-800: #0620cd;
+}

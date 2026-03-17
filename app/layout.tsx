@@ -2,6 +2,8 @@ import "./globals.css";
 import "lenis/dist/lenis.css";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { ReactLenis } from "@/utils/lenis";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,8 +25,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${plusJakartaSans.variable}`}>
       <ReactLenis root>
-        <body className={`font-sans antialiased`}>
-          <main>{children}</main>
+        <body className={`flex min-h-screen flex-col font-sans antialiased`}>
+          <header>
+            <Navbar />
+          </header>
+          <main className="grow">{children}</main>
+          <footer>
+            <Footer />
+          </footer>
         </body>
       </ReactLenis>
     </html>
