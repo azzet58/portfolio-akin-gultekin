@@ -30,7 +30,7 @@ export default function RootLayout({
             <Navbar />
           </header>
           <main className="grow">{children}</main>
-          <footer>
+          <footer className="relative z-10 -mt-16">
             <Footer />
           </footer>
         </body>
