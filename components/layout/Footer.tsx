@@ -6,7 +6,7 @@ export default function Footer() {
     <div className="h-16 w-full">
       <div className="mx-auto h-full max-w-5xl px-4 xl:px-0">
         <div className="flex h-full items-center justify-center gap-4 text-stone-400">
-          <p className="font-heading text-sm font-medium">
+          <p className="font-heading text-xs font-medium">
             © 2026 Akin Gultekin
           </p>
           <ul className="flex gap-2">
