@@ -1,4 +1,5 @@
 type Project = {
+  type: string;
   name: string;
   description: string;
   visual: string;
@@ -8,9 +9,10 @@ type Project = {
 
 export const projects: Project[] = [
   {
+    type: "CLIENT PROJECT",
     name: "Özad Elektrotechniek",
     description:
-      "Modern website redesign for Özad Elektrotechniek - an electrician company. Built with Next.js, Tailwind CSS, shadcn/ui, Framer Motion, Resend and Lucide Icons.",
+      "Designed and developed a custom website for an electrician company using Next.js and Tailwind. Focused on responsive design, performance, and modern UI.",
     visual: "/videos/ozad-elektrotechniek.mp4",
     live: "https://ozadelektrotechniek.nl",
     github: "https://github.com/azzet58/ozad-elektrotechniek",

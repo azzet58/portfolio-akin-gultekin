@@ -11,7 +11,7 @@ export default function Projects() {
           {projects.map((project) => (
             <article
               key={project.live}
-              className="mx-auto flex w-full max-w-5xl 2xl:max-w-7xl flex-col gap-8 2xl:gap-12"
+              className="mx-auto flex w-full max-w-5xl flex-col gap-8 2xl:max-w-7xl 2xl:gap-12"
             >
               <div className="bg-black">
                 <video
@@ -28,11 +28,12 @@ export default function Projects() {
                 </video>
               </div>
               <div className="flex flex-col items-center gap-6">
-                <div className="mx-auto flex w-full max-w-5xl items-start justify-center gap-2">
-                  <h2 className="font-heading text-2xl font-bold md:text-3xl lg:text-4xl 2xl:text-5xl">
-                    {project.name}
-                  </h2>
-                </div>
+                <p className="rounded-full bg-zinc-50 px-2 py-1 text-xs font-bold text-zinc-300">
+                  {project.type}
+                </p>
+                <h2 className="font-heading text-2xl font-bold md:text-3xl lg:text-4xl 2xl:text-5xl">
+                  {project.name}
+                </h2>
                 <p className="font-heading max-w-xl text-center text-sm font-semibold text-zinc-400 md:text-base lg:max-w-2xl 2xl:max-w-3xl 2xl:text-lg">
                   {project.description}
                 </p>
