@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 type ButtonProps = {
+  disabled?: boolean;
   href?: string;
   children?: React.ReactNode;
   target?: string;

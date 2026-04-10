@@ -1,6 +1,12 @@
+"use client";
+
+import { useActionState } from "react";
+import { sendContactForm } from "@/app/actions/contact";
 import Button from "../ui/Button";
 
 export default function Contact() {
+  const [state, action, isPending] = useActionState(sendContactForm, null);
+
   return (
     <section
       id="contact"
@@ -10,7 +16,8 @@ export default function Contact() {
         <h2 className="font-heading md:text-lg lg:text-xl 2xl:text-2xl">
           Let's have a chat.
         </h2>
-        <form className="flex w-full flex-col gap-2">
+        <form action={action} className="flex w-full flex-col gap-2">
+          <input type="hidden" name="honeypot" />
           <input
             type="text"
             name="name"
@@ -28,9 +35,23 @@ export default function Contact() {
             placeholder="Message"
             className="h-40 rounded-md bg-white p-4 text-xs shadow-sm lg:text-sm"
           />
-          <Button className="font-heading rounded-full bg-white text-center text-xs font-medium transition-colors duration-400 hover:bg-zinc-100">
-            Send
-          </Button>
+          <button
+            disabled={isPending}
+            className="font-heading rounded-full bg-white py-2 text-center text-xs font-medium transition-colors duration-400 hover:bg-zinc-100 hover:cursor-pointer"
+          >
+            {isPending ? "Sending..." : "Send"}
+          </button>
+          {state?.message && (
+            <p
+              className={
+                state.success
+                  ? "text-sm text-green-500"
+                  : "text-sm text-red-500"
+              }
+            >
+              {state.message}
+            </p>
+          )}
         </form>
       </div>
     </section>
